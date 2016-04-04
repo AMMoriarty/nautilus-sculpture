@@ -3,9 +3,6 @@
 #Runs lights, sounds, touch sensor for interactive nautilus sculpture 
 #TY to Nick, Abe, David, FABLab & HATCH folks, TonyDiCola NeoPixel Library
 
-#Import IO Library and make instance of REST Client
-#from Adafruit_IO import *
-#aio = Client(b77f44082dc839a747535f8814204bc6569a5bb5)
 import time
 from neopixel import *
 import RPi.GPIO as GPIO
