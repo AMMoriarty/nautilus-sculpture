@@ -81,8 +81,8 @@ def theaterChaseRainbow(strip, wait_ms=50):
 
 #define random sound player
 def rndWav ():
-   randomfile = random.choice(os.listdir("/home/pi/music/"))
-   file = '/home/pi/music/'+ randomfile
+   randomfile = random.choice(os.listdir("/home/pi/Music/nautilus sounds"))
+   file = '/home/pi/Music/nautilus sounds'+ randomfile
    os.system ('omxplayer' + file)
 
 # Main NeoPixel program logic follows:
@@ -104,17 +104,21 @@ while True:
 		
         while True:
 		# Color wipe animations.
-		colorWipe(strip, Color(255, 0, 0))  # Red wipe
-		colorWipe(strip, Color(0, 255, 0))  # Blue wipe
-		colorWipe(strip, Color(0, 0, 255))  # Green wipe
+		colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
+		colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
+		colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
+		colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
+		colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
+		colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
+		colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
 		# Theater chase animations.
-		theaterChase(strip, Color(127, 127, 127))  # White theater chase
-		theaterChase(strip, Color(127,   0,   0))  # Red theater chase
-		theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
+		#theaterChase(strip, Color(127, 127, 127))  # White theater chase
+		#theaterChase(strip, Color(127,   0,   0))  # Red theater chase
+		#theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
 		# Rainbow animations.
-		rainbow(strip)
-		rainbowCycle(strip)
-		theaterChaseRainbow(strip)
+		#rainbow(strip)
+		#rainbowCycle(strip)
+		#theaterChaseRainbow(strip)
 
                 #play random Wav file
 		rndWav ()
