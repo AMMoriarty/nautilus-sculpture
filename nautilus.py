@@ -82,8 +82,8 @@ def theaterChaseRainbow(strip, wait_ms=50):
 
 #define random sound player
 def rndWav ():
-   randomfile = random.choice(os.listdir("/home/pi/Music/nautilus sounds"))
-   file = '/home/pi/Music/nautilus sounds'+ randomfile
+   randomfile = random.choice(os.listdir("/home/pi/Music/nautilus"))
+   file = '/home/pi/Music/nautilus'+ randomfile
    os.system ('omxplayer' + file)
 
 # Main NeoPixel program logic follows:
