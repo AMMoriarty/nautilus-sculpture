@@ -1,7 +1,7 @@
 #Nautilus 2015-2016
 #by Cassandra Phillips-Sears
 #Runs lights, sounds, touch sensor for interactive nautilus sculpture 
-#TY to Nick, Abe, David, FABLab & HATCH folks, TonyDiCola NeoPixel Library
+#TY to Nick, Abe, David, FABLab & HATCH folks, TonyDiCola NeoPixel Library, Kelly
 
 import time
 from neopixel import *
@@ -82,9 +82,9 @@ def theaterChaseRainbow(strip, wait_ms=50):
 
 #define random sound player
 def rndWav ():
-   randomfile = random.choice(os.listdir("../home/pi/Music/nautilus/"))
-   file = '../home/pi/Music/nautilus/'+ randomfile
-   os.system ('aplay' + file)
+   randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
+   file = '/home/pi/Music/nautilus/'+ randomfile
+   os.system ('aplay ' + file)
 
 # Main NeoPixel program logic follows:
 if __name__ == '__main__':
