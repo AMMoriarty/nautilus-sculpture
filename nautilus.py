@@ -101,8 +101,10 @@ while True:
 	
 	if padPressed and not alreadyPressed:
 		#test
-		print 'press Ctrl-C to quit.'
-		
+		print 'press TEST to quit.'
+	
+	#test
+	print 'press Ctrl-C to quit.'	
         while True:
 		# Color wipe animations.
 		colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
