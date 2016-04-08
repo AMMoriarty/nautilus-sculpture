@@ -94,37 +94,37 @@ if __name__ == '__main__':
 	strip.begin()
 
 #set initial state of touch sensor
-alreadyPressed = False
+	alreadyPressed = False
 
-while True:
-	padPressed = GPIO.input(padPin)
+	while True:
+		padPressed = GPIO.input(padPin)
 	
-	if padPressed and not alreadyPressed:
+		if padPressed and not alreadyPressed:
 		#test
 		print 'press TEST to quit.'
 	
-	#test
-	print 'press Ctrl-C to quit.'	
-        while True:
+		#test
+		print 'press Ctrl-C to quit.'	
+        	while True:
 		# Color wipe animations.
-		colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
-		colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
-		colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
-		colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
-		colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
-		colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
-		colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
-		# Theater chase animations.
-		#theaterChase(strip, Color(127, 127, 127))  # White theater chase
-		#theaterChase(strip, Color(127,   0,   0))  # Red theater chase
-		#theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
-		# Rainbow animations.
-		#rainbow(strip)
-		#rainbowCycle(strip)
-		#theaterChaseRainbow(strip)
+			colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
+			colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
+			colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
+			colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
+			colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
+			colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
+			colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
+			# Theater chase animations.
+			#theaterChase(strip, Color(127, 127, 127))  # White theater chase
+			#theaterChase(strip, Color(127,   0,   0))  # Red theater chase
+			#theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
+			# Rainbow animations.
+			#rainbow(strip)
+			#rainbowCycle(strip)
+			#theaterChaseRainbow(strip)
 
-                #play random Wav file
-		rndWav ()
+                	#play random Wav file
+			rndWav ()
 	
-	alreadyPressed = padPressed
-	time.sleep(0.1)
+		alreadyPressed = padPressed
+		time.sleep(0.1)
