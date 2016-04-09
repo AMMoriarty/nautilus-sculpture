@@ -100,8 +100,8 @@ if __name__ == '__main__':
 		padPressed = GPIO.input(padPin)
 	
 		if padPressed and not alreadyPressed:
-		#test
-		print 'press Ctrl-C to quit.'	
+			#test
+			print 'press Ctrl-C to quit.'	
         	while True:
 		# Color wipe animations.
 			colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
@@ -120,8 +120,8 @@ if __name__ == '__main__':
 			#rainbowCycle(strip)
 			#theaterChaseRainbow(strip)
 
-                	#play random Wav file
-			rndWav ()
+                #play random Wav file
+		rndWav ()
 	
 		alreadyPressed = padPressed
 		time.sleep(0.1)
