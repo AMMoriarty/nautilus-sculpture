@@ -101,9 +101,6 @@ if __name__ == '__main__':
 	
 		if padPressed and not alreadyPressed:
 		#test
-		print 'press TEST to quit.'
-	
-		#test
 		print 'press Ctrl-C to quit.'	
         	while True:
 		# Color wipe animations.
