@@ -86,42 +86,42 @@ def rndWav ():
    file = '/home/pi/Music/nautilus/'+ randomfile
    os.system ('aplay ' + file)
 
-# Main NeoPixel program logic follows:
-if __name__ == '__main__':
-	# Create NeoPixel object with appropriate configuration.
-	strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
-	# Intialize the library (must be called once before other functions).
-	strip.begin()
-
 #set initial state of touch sensor
-	alreadyPressed = False
+alreadyPressed = False
 
 	while True:
 		padPressed = GPIO.input(padPin)
 	
 		if padPressed and not alreadyPressed:
-			#test
-			print 'press Ctrl-C to quit.'	
-        	while True:
-		# Color wipe animations.
-			colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
-			colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
-			colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
-			colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
-			colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
-			colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
-			colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
-			# Theater chase animations.
-			#theaterChase(strip, Color(127, 127, 127))  # White theater chase
-			#theaterChase(strip, Color(127,   0,   0))  # Red theater chase
-			#theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
-			# Rainbow animations.
-			#rainbow(strip)
-			#rainbowCycle(strip)
-			#theaterChaseRainbow(strip)
+        		# Main NeoPixel program logic follows:
+				if __name__ == '__main__':
+					# Create NeoPixel object with appropriate configuration.
+					strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
+					# Intialize the library (must be called once before other functions).
+					strip.begin()
+        				
+        				#test
+					print ('press Ctrl-C to quit.')	
+        				while True:
+						# Color wipe animations.
+						colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
+						colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
+						colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
+						colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
+						colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
+						colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
+						colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
+						# Theater chase animations.
+						#theaterChase(strip, Color(127, 127, 127))  # White theater chase
+						#theaterChase(strip, Color(127,   0,   0))  # Red theater chase
+						#theaterChase(strip, Color(  0,   0, 127))  # Blue theater chase
+						# Rainbow animations.
+						#rainbow(strip)
+						#rainbowCycle(strip)
+						#theaterChaseRainbow(strip)
 
-                #play random Wav file
-		rndWav ()
+                				#play random Wav file
+						rndWav ()
 	
 		alreadyPressed = padPressed
 		time.sleep(0.1)
