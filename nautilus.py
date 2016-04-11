@@ -102,7 +102,10 @@ def main():
             strip.begin()
         				
             #test
-            print ('press Ctrl-C to quit.')	
+            print ('press Ctrl-C to quit.')
+            #play random wav file
+            rndWav()
+            #end play wav file
             while True:
                 # Color wipe animations.
                 colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
@@ -122,9 +125,6 @@ def main():
                 #rainbowCycle(strip)
                 #theaterChaseRainbow(strip)
 
-                #play random wav file
-                rndWav()
-                #end play wav file
             #end while
      #end if
 
