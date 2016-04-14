@@ -84,7 +84,7 @@ def theaterChaseRainbow(strip, wait_ms=50):
 def rndWav ():
    randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
    file = '/home/pi/Music/nautilus/'+ randomfile
-   os.system ('aplay ' + file &)
+   os.system ('aplay ' + file)
 
 def main():
     #set initial state of touch sensor
@@ -108,7 +108,7 @@ def main():
             #end play wav file
             while True:
                 # Color wipe animations.
-                colorWipe(strip, Color(144, 212, 195))  #Light blue wipe
+                colorWipe(strip, Color(144, 232, 195))  #Light blue wipe
                 colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
                 colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
                 colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
