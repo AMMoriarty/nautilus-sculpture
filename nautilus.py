@@ -94,7 +94,7 @@ def callback_first(channel):   #Sound Playback Open
     global soundprocess
     randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
     file = '/home/pi/Music/nautilus/'+ randomfile
-    print ("Sound starting soon")
+    print ("sound starting soon")
     soundprocess = subprocess.Popen(['omxplayer','-o','hdmi',file],stdin=subprocess.PIPE)
 
 #def callback_second(channel):   # "Program Exit"
