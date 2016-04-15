@@ -125,8 +125,8 @@ def main():
             print ('press Ctrl-C to quit.')
             #play random wav file
             try:    
-    		GPIO.add_event_detect(padPin, GPIO.BOTH, callback=callback_first, bouncetime=400)
-    		sleep(100)
+    		GPIO.add_event_detect(padPin, GPIO.BOTH, callback=callback_first, bouncetime=100)
+    		time.sleep(0.1)
     	    finally:
     	    	GPIO.cleanup()
             #end play wav file
