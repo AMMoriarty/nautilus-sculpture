@@ -7,6 +7,9 @@ import time
 from neopixel import *
 import RPi.GPIO as GPIO
 import os, random
+import subprocess
+
+soundprocess = None
 
 #NeoPixel LED Strip Config
 LED_COUNT = 60 #number of LED pixels
@@ -81,10 +84,27 @@ def theaterChaseRainbow(strip, wait_ms=50):
 				strip.setPixelColor(i+q, 0)
 
 #define random sound player
-def rndWav ():
-   randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
-   file = '/home/pi/Music/nautilus/'+ randomfile
-   os.system ('omxplayer -o hdmi ' + file)
+#def rndWav ():
+ #  randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
+ # file = '/home/pi/Music/nautilus/'+ randomfile
+ # os.system ('omxplayer -o hdmi ' + file)
+   
+#define random sound player w subprocess
+def callback_first(channel):   #Sound Playback Open
+    global soundprocess
+    randomfile = random.choice(os.listdir("/home/pi/Music/nautilus/"))
+    file = '/home/pi/Music/nautilus/'+ randomfile
+    print ("Sound starting soon")
+    soundprocess = subprocess.Popen(['omxplayer','-o','hdmi','file'],stdin=subprocess.PIPE)
+
+#def callback_second(channel):   # "Program Exit"
+    #global soundprocess
+    #print("Sound Terminate")
+    #if soundprocess:
+        #soundprocess.stdin.write('q')
+    #soundprocess = None
+    #GPIO.cleanup()
+    #sys.exit("System Exiting")
 
 def main():
     #set initial state of touch sensor
@@ -104,7 +124,11 @@ def main():
             #test
             print ('press Ctrl-C to quit.')
             #play random wav file
-            rndWav()
+            try:    
+    		GPIO.add_event_detect(padPin, GPIO.BOTH, callback=callback_first, bouncetime=400)
+    		sleep(100)
+    	    finally:
+    	    	GPIO.cleanup()
             #end play wav file
             while True:
                 # Color wipe animations.
