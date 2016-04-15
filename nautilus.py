@@ -123,13 +123,6 @@ def main():
         				
             #test
             print ('press Ctrl-C to quit.')
-            #play random wav file
-            try:    
-    		GPIO.add_event_detect(padPin, GPIO.BOTH, callback=callback_first, bouncetime=400)
-    		time.sleep(0.1)
-    	    finally:
-    	    	GPIO.cleanup()
-            #end play wav file
             while True:
                 # Color wipe animations.
                 colorWipe(strip, Color(144, 232, 195))  #Light blue wipe
@@ -139,6 +132,14 @@ def main():
                 colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
                 colorWipe(strip, Color(0, 50, 50)) #Turquoise wipe
                 colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
+                
+                #play random wav file
+            	try:    
+    			GPIO.add_event_detect(padPin, GPIO.BOTH, callback=callback_first, bouncetime=400)
+    			time.sleep(0.1)
+    	    	finally:
+    	    		GPIO.cleanup()
+            	#end play wav file
 
                 # Theater chase animations.
                 #theaterChase(strip, Color(127, 127, 127))  # White theater chase
