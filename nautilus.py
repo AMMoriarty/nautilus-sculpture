@@ -34,6 +34,13 @@ def colorWipe(strip, color, wait_ms=50):
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
+def pixelsOff (strip, color, wait_ms=50):
+	"""Turn off NeoPixels."""
+	for i in range(strip.numPixels()):
+      		strip.setPixelColor(i, color)
+   		strip.show()
+		time.sleep(wait_ms/1000.0)
+
 def theaterChase(strip, color, wait_ms=50, iterations=10):
 	"""Movie theater light style chaser animation."""
 	for j in range(iterations):
@@ -151,11 +158,15 @@ def main():
                 #theaterChaseRainbow(strip)
 
             #end while
+     else:
+     	#turn off NeoPixels
+     	pixelsOff(strip, Color(0, 0, 0)) #all color values to zero
      #end if
 
         alreadyPressed = padPressed
         time.sleep(0.1)
     #end while
+    
 #end main
 
 if __name__ == '__main__':
