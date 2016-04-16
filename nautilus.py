@@ -80,19 +80,19 @@ def main():
         		
         	if padPressed and not alreadyPressed:
             		
-            	#miniprompt for user
-            	print ('press Ctrl-C to quit.')
+            		#miniprompt for user
+            		print ('press Ctrl-C to quit.')
             	
-            	#play random wav file and lights when pin on, not when pin off
-            	try:    
-    			GPIO.add_event_detect(23, GPIO.RISING, callback=callback_first, bouncetime=100)
-    			time.sleep(0.1)
-    			GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_second, bouncetime=100)
-    		finally:
-    			GPIO.cleanup()
-    			print('thank you!')
-    		#end play wav and lights
-    	#end while
+            		#play random wav file and lights when pin on, not when pin off
+            		try:    
+    				GPIO.add_event_detect(23, GPIO.RISING, callback=callback_first, bouncetime=100)
+    				time.sleep(0.1)
+    				GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_second, bouncetime=100)
+    			finally:
+    				GPIO.cleanup()
+    				print('thank you!')
+    			#end play wav and lights
+    		#end while
     	#end if
 	alreadyPressed = padPressed
 	print('please touch!')
