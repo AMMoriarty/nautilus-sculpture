@@ -48,7 +48,6 @@ def callback_first(channel):   #Sound Playback Open
 	print ("sound starting soon")
 	soundprocess = subprocess.Popen(['omxplayer','-o','hdmi',file],stdin=subprocess.PIPE)
 	time.sleep(10)
-	global soundprocess
 	print("Sound Terminate")
 	if soundprocess:
 		soundprocess.stdin.write('q')
