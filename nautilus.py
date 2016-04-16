@@ -47,20 +47,6 @@ def callback_first(channel):   #Sound Playback Open
 	file = '/home/pi/Music/nautilus/'+ randomfile
 	print ("sound starting soon")
 	soundprocess = subprocess.Popen(['omxplayer','-o','hdmi',file],stdin=subprocess.PIPE)
-    	#starting lights
-    	#main NeoPixel Program logic follows
-    	# Create NeoPixel object with appropriate configuration.
-    	strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
-    	# Intialize the library (must be called once before other functions).
-    	strip.begin()
-    	#colors for lights
-    	colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
-    	colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
-    	colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
-    	colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
-    	colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
-    	#turn off NeoPixels when done
-    	pixelsOff(strip, Color(0,0,0)) #all color vals to 0
 
 def callback_second(channel):   # "Program Exit"
 	global soundprocess
@@ -87,6 +73,20 @@ def main():
             		try:    
     				GPIO.add_event_detect(23, GPIO.RISING, callback=callback_first, bouncetime=100)
     				time.sleep(0.1)
+    				#starting lights
+    				#main NeoPixel Program logic follows
+    				# Create NeoPixel object with appropriate configuration.
+    				strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
+    				# Intialize the library (must be called once before other functions).
+    				strip.begin()
+    				#colors for lights
+    				colorWipe(strip, Color(13, 77, 94))  #Dk Turquoise wipe
+    				colorWipe(strip, Color(53, 150, 62)) #Navyblue wipe
+    				colorWipe(strip, Color(53, 93, 150)) #Seafoam wipe
+    				colorWipe(strip, Color(43, 43, 179)) #Robinegg wipe
+    				colorWipe(strip, Color(71, 122, 20)) #Indigo wipe
+    				#turn off NeoPixels when done
+    				pixelsOff(strip, Color(0,0,0)) #all color vals to 0
     				GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_second, bouncetime=100)
     			finally:
     				GPIO.cleanup()
