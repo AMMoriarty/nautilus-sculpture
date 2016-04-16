@@ -68,7 +68,7 @@ def main():
             	
             		#play random wav file and lights when pin on, not when pin off
             		try:    
-    				GPIO.add_event_detect(23, GPIO.BOTH, callback=callback_first, bouncetime=400)
+    				GPIO.add_event_detect(23, GPIO.RISING, callback=callback_first, bouncetime=600)
     				time.sleep(0.1)
     				#starting lights
     				#main NeoPixel Program logic follows
