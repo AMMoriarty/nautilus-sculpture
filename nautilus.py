@@ -68,7 +68,7 @@ def callback_second(channel):   # "Program Exit"
 	if soundprocess:
 		soundprocess.stdin.write('q')
 	soundprocess = None
-    GPIO.cleanup()
+	GPIO.cleanup()
     #sys.exit("System Exiting")
 
 def main():
